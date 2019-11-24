@@ -40,6 +40,7 @@ module Fastlane
                     "--test #{params[:android_test_apk]} "\
                     "#{create_devices_params(params)}"\
                     "--timeout #{params[:timeout]} "\
+                    "--environment-variables coverage=true,coverageFile=/sdcard/coverage.ec"\
                     "#{params[:extra_options]} > #{PIPE} 2>&1")
         ensure
           remove_pipe_if_exists
